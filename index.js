@@ -65,3 +65,5 @@ server.on('error', (err) => {
 
 // listening of port
 server.listen(config.TCPServerPort, config.TCPHostAddress);
+
+console.info(`Watcher listening on port: ${config.TCPServerPort}`);

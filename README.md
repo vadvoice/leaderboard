@@ -9,3 +9,10 @@ TODO:
 ## Preinstallation
 - NodeJS ~10
 - Redis
+
+
+## Installation
+
+1. `npm i`
+||
+`yarn`

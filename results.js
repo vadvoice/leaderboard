@@ -40,3 +40,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(config.resultsServerPort);
+
+console.info(`Results available on port: ${config.resultsServerPort}`);
