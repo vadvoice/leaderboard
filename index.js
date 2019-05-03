@@ -1,4 +1,5 @@
 const net = require('net');
+const config = require('./config');
 const redis = require('redis');
 const httpZ = require('http-z');
 
@@ -63,4 +64,4 @@ server.on('error', (err) => {
 });
 
 // listening of port
-server.listen(1337, '127.0.0.1');
+server.listen(config.TCPServerPort, config.TCPHostAddress);
