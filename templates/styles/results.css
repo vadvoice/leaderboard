@@ -1,0 +1,38 @@
+/* w3schools.com */
+
+@font-face {
+  font-family: JosefinSansBold;
+  src: url(../fonts/JosefinSans-Bold.ttf) format('truetype'),
+    url(../fonts/JosefinSans-Bold.woff) format('woff');
+}
+@font-face {
+  font-family: JosefinSansItalic;
+  src: url(../fonts/JosefinSans-Italic.ttf) format('truetype')
+    url(../fonts/JosefinSans-Italic.woff) format('woff');
+  ;
+}
+
+h1,
+caption {
+  font-family: JosefinSansBold, Lato, Courier, Garamond;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: JosefinSansItalic, Lato, Courier, Palatino;
+}
+
+th, td {
+  font-family: inherit;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+

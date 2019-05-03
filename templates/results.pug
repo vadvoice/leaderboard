@@ -1,0 +1,23 @@
+head
+  style
+    include ./styles/results.css
+body
+  h1 #{name} leaderboard.
+
+  - const headerNames = { first_name: 'First Name', last_name: 'Last name', score: 'Score', date: 'Date'}
+  table
+    caption Top 3 places
+    thead
+      tr
+      each headerName in Object.keys(scores[0])
+        if headerName
+          th= headerNames[headerName]
+
+    tbody
+    each score in scores
+      if score
+        tr
+          td #{score.score}
+          td #{score.first_name}
+          td #{score.last_name}
+          td #{score.date}

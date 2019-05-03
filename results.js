@@ -3,6 +3,7 @@ const redis = require('redis');
 const pug = require('pug');
 const config = require('./config');
 const series = require('async/series');
+const resultsTemplate = pug.compileFile('./templates/results.pug');
 const { getDetailedInfo } = require('./helpers/redis.helper');
 
 const redisClient = redis.createClient();
@@ -20,9 +21,8 @@ const server = http.createServer((req, res) => {
     }
     let callFunctions = new Array();
 
-    for (var i = 0; i < result.length; i++) {
-      callFunctions.push(getDetailedInfo(redisClient, result[i]));
-    }
+    // queue for processing results by hash key
+    result.forEach((el, idx) => callFunctions.push(getDetailedInfo(redisClient, result[idx])));
 
     return series(callFunctions, (err, scores) => {
       if(err) {
@@ -31,7 +31,10 @@ const server = http.createServer((req, res) => {
         return res.end('Error while execution results');
       }
 
-      return res.end(scores);
+      // set data to template
+      const responseTemplate = resultsTemplate({ name: 'test', scores });
+
+      return res.end(responseTemplate);
     })
   })
 });
