@@ -2,8 +2,8 @@
 
 
 TODO:
-1. API to getting result of contest
-2. TCP server to consumption data and detecting IP addreses
+1. [Plan](https://www.lucidchart.com/documents/edit/14f64e4b-25d2-4ad8-8293-991efca1c2f1/0?shared=true&)
+2. TCP server must detecting IP addreses and storign statistics to db
 
 
 ## Preinstallation
